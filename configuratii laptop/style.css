@@ -1,0 +1,16 @@
+
+body{
+    background-color: #deddfa;
+}
+hr {
+    color: grey;
+    border-style: dotted none none;
+    width: 50px;
+    border-width: 5px;
+}
+
+.titlu {
+    text-align: center;
+    color: cadetblue;
+    transform: rotate(180deg);
+}
