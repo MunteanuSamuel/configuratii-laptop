@@ -1,18 +1,54 @@
 
-function reseteazaConficuratia () {
-    document.getElementById("reseteaza").reset();
+
+//Constructor function
+function Configuratie (a, b, c, d) {
+    this.procesor = a;
+    this.memorieRam = b;
+    this.placaVideo = c;
+    this.capacitateStocare = d;
+}
+//console.log(Object.keys(Configuratie));
+
+function pretConfiguratie (){
+   let rams = document.querySelector("#selectRam").value;
+    // console.log(rams);
+   let video = document.querySelector("#selectVideo").value;
+    // console.log(video);
+   let CPU = document.querySelector("#selectCPU").value;
+    // console.log(CPU);
+   let stocare = document.querySelector("#selectMemory").value;
+    // console.log(stocare);
+    let configuratieUser = new Configuratie (rams, video, CPU, stocare);
+    // console.log(configuratieUser);
+    document.querySelector("#trimitePret").innerHTML = "Configuratia selectata a fost aleasa.";
+    return configuratieUser;
 }
 
-let formular = document.getElementById("formular");
+function afiseazaPret() {
+    let confAleasa = Object.values(pretConfiguratie());
+    //console.log(confAleasa);
+    let pret = 1000;
+    for (let i=0; i<confAleasa.length; i++){
+        pret += Number.parseInt(confAleasa[i]);
+        // console.log(pret);
+    }
+    document.querySelector("#afiseazaPret").innerHTML = "Pretul configuratiei alese este: " + pret;
+    return pret;
+}
 
-let Configuratie = {
+function reseteazaConficuratia () {
+    document.querySelector("#trimitePret").innerHTML = "Apasa pentru a alege configuratia.";
+    document.querySelector("#afiseazaPret").innerHTML = "Apasa pentru a calcula pretul.";
+}
+
+/*let Configuratie = {
     procesor: "",
     memorieRam: number,
     placaVideo: "",
     capacitateStocare: number,
-}
+}*/
 
-let ram1 = {
+/*let ram1 = {
     tip: 4,
     pret: 150,
 }
@@ -66,25 +102,23 @@ let stocare3 ={
     pret: 900,
 }
 
-
 let ram = [{tip: 4, pret: 150}, {tip: 8, pret: 300}, {tip: 16, pret: 450}];
 let procesoare = [{tip: "I3", pret: 250}, {tip: "I5", pret: 450}, {tip: "I7", pret: 650}];
 let stocare = [{tip: 256, pret: 250}, {tip: 512, pret: 500}, {tip: 1000, pret: 900}];
 let video = [{tip: "dedicata", pret: 250}, {tip: "integrata", pret: 500}];
 
-
-function verificaRam (ram:object[]):number{
-    let alegereRam=document.querySelector("#selectRam");
-    for (let i=0; i<ram.lenght; i++){
-        if (alegereRam===ram[i].tip){
-            alegereRam=ram[i].pret;
+function verificaRam (a){
+    let alegereRam=document.querySelector("#selectRam").value;
+    for (let i=0; i<a.lenght; i++){
+        if (alegereRam===a[i].tip){
+            alegereRam=a[i].pret;
         }
     }
     return alegereRam;
 }
 
-function verificaVideo (video:object[]):number{
-    let alegereVideo=document.querySelector("#selectVideo");
+function verificaVideo (video){
+    let alegereVideo=document.querySelector("#selectVideo").value;
     for (let i=0; i<video.length; i++){
         if (video[i].tip===alegereVideo){
             alegereVideo = video[i].pret;
@@ -93,8 +127,8 @@ function verificaVideo (video:object[]):number{
     return alegereVideo;
 }
 
-function verificaProcesor (procesoare:object[]):number{
-    let alegereProcesor=documnet.getElementById("selectProcesor");
+function verificaProcesor (procesoare){
+    let alegereProcesor = document.getElementById("selectCPU").value;
     for (let i=0; i<procesoare.length; i++){
         if (procesoare[i].tip===alegereProcesor){
             alegereProcesor=procesoare[i].pret;
@@ -103,8 +137,8 @@ function verificaProcesor (procesoare:object[]):number{
     return alegereProcesor;
 }
 
-function verificaStocare (stocare:object[]):number{
-    let alegereStocare = document.getElementById("selectMemory");
+function verificaStocare (stocare){
+    let alegereStocare = document.getElementById("selectMemory").value;
     for (let i=0; i<stocare.length; i++){
         if (stocare[i].tip===alegereStocare){
             alegereStocare=stocare[i].pret;
@@ -121,40 +155,9 @@ let procesorAles = verificaProcesor(procesoare);
 let pretConfiguratie = 500;
 pretConfiguratie += ramAles + videoAles + stocareAleasa + procesorAles;
 
-
 function afiseazaPret (pret){
     document.getElementById("trimitePret").innerHTML="Pret toatal: + pretConfiguratie";
-}
+}*/
 
-
-
-
-
-
-
-
-
-/*
-//Constructor function
-function Configuratie () {
-    this.procesor = procesor;
-    this.memorieRam = memorieRam;
-    this.placaVideo = placaVideo;
-    this.capacitateStocare = capacitateStocare;
-    this.pret = function (){
-    return procesor.pret+mimorieRam.pret+plavaVideo.pret+capacitateStocare.pret;
-//}}
-
-let rams = document.querySelector("#selectRam").getAttribute("value");
-let configuratie = new Configuratie('rams' )
-
-
-
-// varianta cu preluarea atributului "value";
-function calculeazaRam (){
-   let ramAles = document.querySelector("#selectRam").getAttribute("value");}
-
-*/
-
-
+/*let pretConfiguratie = Configuratie.procesor.pret+Configuratie.mimorieRam.pret+Configuratie.plavaVideo.pret+Configuratie.capacitateStocare.pret;*/
 

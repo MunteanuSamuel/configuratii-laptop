@@ -14,3 +14,8 @@ hr {
     color: cadetblue;
     transform: rotate(180deg);
 }
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}

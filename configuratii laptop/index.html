@@ -12,30 +12,30 @@
 <hr>
 
 <form id="formular">
-<h4>Alege Procesor</h4><br>
-    <select id="selectProcesor" name="Alege Procesor">
-        <option id="baseProcesor" value="100">None</option>
-        <option id="intelI3" value="250">Intel I3</option>
-        <option id="intelI5" value="400">Intel I5</option>
-        <option id="intelI7" value="600">Intel I7</option>
-    </select>
-<hr>
 
-
+<div class="flex-container">
 <h4>Alege Memorie RAM</h4><br>
     <select id="selectRam" name="Alege Ram">
         <option id="baseRam" value="100">None</option>
-        <option id="4Gb" value="150">4Gb</option>
-        <option id="8Gb" value="250">8Gb</option>
-        <option id="16Gb" value="400">16Gb</option>
+        <option id="4Gb" value="200">4Gb</option>
+        <option id="8Gb" value="400">8Gb</option>
+        <option id="16Gb" value="600">16Gb</option>
     </select>
 <hr>
 
+    <h4>Alege Procesor</h4><br>
+    <select id="selectCPU" name="Alege Procesor">
+        <option id="baseProcesor" value="100">None</option>
+        <option id="intelI3" value="200">Intel I3</option>
+        <option id="intelI5" value="350">Intel I5</option>
+        <option id="intelI7" value="500">Intel I7</option>
+    </select>
+    <hr>
 
 <h4>Alege Placa Video</h4>
     <select id="selectVideo" name="Alege Video">
         <option id="baseVideo" value="100">None</option>
-        <option id="integrata" value="200">Integrata</option>
+        <option id="integrata" value="250">Integrata</option>
         <option id="dedicata" value="500">Dedicata</option>
     </select>
 <hr>
@@ -45,14 +45,16 @@
         <option id="baseMemory" value="100">None</option>
         <option id="250Gb" value="250">250Gb</option>
         <option id="500Gb" value="400">500Gb</option>
-        <option id="1000 Gb" value="650">1000Gb</option>
+        <option id="1000 Gb" value="600">1000Gb</option>
     </select>
+</div>
 <hr>
 
     <p id="total">Pret final:</p>
 
-    <button id="trimitePret" onclick="afiseazaPret()">Alege Configuratia</button>
-    <input type="reset" id="reseteaza" onclick="reseteazaConficuratia ()">
+    <h3 id="trimitePret" onclick="pretConfiguratie()">Apasa pentru a alege configuratia.</h3><br>
+    <h3 id="afiseazaPret" onclick="afiseazaPret()">Apasa pentru a calcula pretul.</h3>
+    <input type="reset" id="reseteaza"onclick="reseteazaConficuratia()">
     <hr>
 </form>
 <br>
