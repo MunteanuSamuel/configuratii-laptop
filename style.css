@@ -1,0 +1,61 @@
+
+body{
+    background-color: #EFF2F6;
+}
+
+footer {
+    text-align: left;
+    color: #F9BD9E;
+    margin-inline-start: 20px;
+    justify-content: space-around;
+}
+
+#title {
+    text-align: center;
+    color: #F9BD9E;
+
+}
+
+hr {
+    color: #F9BD9E;
+    border-style: dotted none none;
+    width: 50px;
+    border-width: 5px;
+}
+
+.flex-container {
+    display: flex;
+    align-content: center;
+    flex-flow: wrap column;
+    align-items: center;
+}
+
+#carouselExampleControls {
+    border: solid #5C83AC 5px;
+}
+
+h4, h3 {
+    color: #5C83AC;
+    text-decoration: #F9BD9E;
+    text-decoration-style: dotted;
+    text-decoration-width: 2px;
+
+}
+
+select {
+    border-color: #5C83AC;
+    background-color: #FFF9F6;
+
+}
+
+.btn {
+    background-color: #EFF2F6;
+    color: #5C83AC;
+    border-color: #5C83AC;
+}
+
+.btn:hover {
+    background-color: #F9BD9E;
+    border-color: #5C83AC;
+}
+
